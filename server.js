@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 app.post("/merge", upload.array('pdfs',12), async (req,res,next)=> {
     console.log(req.files)
     await mergePdfs(path.join(__dirname,req.files[0].path), path.join(__dirname,req.files[1].path))
-    res.redirect("https://pdfxmerger.netlify.app/static/merged.pdf" );
+    res.redirect("https://pdfxmerger.onrender.com/static/merged.pdf" );
 })
 
 app.listen(port, () => {
